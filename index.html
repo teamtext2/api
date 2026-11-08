@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Spac2 API</title>
+    <meta name="title" content="Spac2 API — Real-Time Web Search, Reader & Indexing APIs">
+    <meta name="description" content="Spac2 API provides high-speed, low-latency Web Search, Web Reader, and Realtime Indexing APIs returning clean JSON and Markdown for developers and AI agents.">
+    <meta name="keywords" content="Spac2 API, Search API, Web Search API, Web Reader API, Realtime Index API, JSON Search API, AI Search API, spac2">
+    <meta name="author" content="Spac2">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#1D1D1D">
+    <link rel="canonical" href="https://api.spac2.com/">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" href="https://spac2.com/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="https://spac2.com/favicon.ico">
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://api.spac2.com/">
+    <meta property="og:site_name" content="Spac2 API">
+    <meta property="og:title" content="Spac2 API — Real-Time Web Search, Reader & Indexing APIs">
+    <meta property="og:description" content="High-speed, low-latency Web Search, Web Reader, and Realtime Indexing APIs for modern applications and AI agents.">
+    <meta property="og:image" content="https://spac2.com/favicon.ico">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://api.spac2.com/">
+    <meta name="twitter:title" content="Spac2 API — Real-Time Web Search, Reader & Indexing APIs">
+    <meta name="twitter:description" content="High-speed, low-latency Web Search, Web Reader, and Realtime Indexing APIs for modern applications and AI agents.">
+    <meta name="twitter:image" content="https://spac2.com/favicon.ico">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://api.spac2.com/#website",
+                "url": "https://api.spac2.com/",
+                "name": "Spac2 API",
+                "description": "High-speed, low-latency Web Search, Web Reader, and Realtime Indexing APIs.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Spac2",
+                    "url": "https://spac2.com",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://spac2.com/favicon.ico"
+                    }
+                }
+            },
+            {
+                "@type": "WebAPI",
+                "@id": "https://api.spac2.com/#search-api",
+                "name": "Spac2 Search API",
+                "description": "Real-time, high-speed web search results in JSON format for applications and AI agents.",
+                "documentation": "https://spac2.com/search/search-api-guide",
+                "termsOfService": "https://spac2.com/search/search-api-guide",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Spac2",
+                    "url": "https://spac2.com"
+                },
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Free Starter Plan",
+                        "price": "0",
+                        "priceCurrency": "USD",
+                        "url": "https://spac2.com/search/search-api-guide"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Pro Pay-as-you-go Plan",
+                        "description": "High speed, low latency production API access",
+                        "url": "https://spac2.com/search/search-api-guide"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Custom Enterprise SLA Plan",
+                        "description": "Dedicated infrastructure with unlimited rate limits and 99.99% SLA",
+                        "url": "https://spac2.com/search/search-api-guide"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #1D1D1D;
+            --surface: #242424;
+            --surface-hover: #2C2C2C;
+            --border: #333333;
+            --text: #FFFFFF;
+            --muted: #888888;
+            --max-w: 1040px;
+            --pad-x: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Screen-reader / SEO Accessible Heading */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Floating Rounded Header Bar — Logo & Title Only */
+        .header-wrap {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            padding: 0 var(--pad-x);
+            pointer-events: none;
+        }
+
+        .header {
+            pointer-events: auto;
+            width: 100%;
+            max-width: calc(var(--max-w) - (var(--pad-x) * 2));
+            background: rgba(36, 36, 36, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 9999px;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+            transition: border-color 0.2s ease;
+        }
+
+        .header:hover {
+            border-color: rgba(255, 255, 255, 0.28);
+        }
+
+        .header img {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .header span {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Standard Container */
+        .container {
+            width: 100%;
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 120px var(--pad-x) 64px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Section Block */
+        .block {
+            margin-bottom: 48px;
+        }
+
+        .block-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        /* 3-Column Vertical Square/Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .vcard {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 340px;
+            min-width: 0;
+            text-decoration: none;
+            color: var(--text);
+            overflow: hidden;
+            transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+        }
+
+        a.vcard:hover {
+            border-color: var(--text);
+            background: var(--surface-hover);
+            transform: translateY(-2px);
+        }
+
+        .vcard.active {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .vcard.disabled {
+            opacity: 0.48;
+            border-style: dashed;
+        }
+
+        /* Divided Cells Inside Each Card */
+        .cell-head {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .cell-title-group {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            min-width: 0;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text);
+            flex-shrink: 0;
+        }
+
+        .dot.off {
+            background: var(--muted);
+        }
+
+        .cell-title {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--text);
+            color: #121212;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+
+        .tag.muted {
+            background: transparent;
+            color: var(--muted);
+            border: 1px solid var(--border);
+        }
+
+        /* Main Hero Cell */
+        .cell-hero {
+            padding: 24px 20px;
+            border-bottom: 1px solid var(--border);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .hero-big {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+        }
+
+        .hero-sub {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* 2-Column Split Spec Cells */
+        .cell-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cell-box {
+            padding: 13px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-width: 0;
+        }
+
+        .cell-box:first-child {
+            border-right: 1px solid var(--border);
+        }
+
+        .box-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+        }
+
+        .box-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Single Row Divided Cells */
+        .cell-row {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+        }
+
+        .cell-row span:first-child {
+            color: var(--muted);
+            flex-shrink: 0;
+        }
+
+        .cell-row span:last-child {
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Bottom Action Cell */
+        .cell-foot {
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Bottom Navigation Bar */
+        .bottom-nav {
+            margin-top: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            padding: 8px 10px 8px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .bottom-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .bottom-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .bottom-links a:hover {
+            color: var(--text);
+        }
+
+        .bottom-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+        }
+
+        .btn {
+            background: var(--text);
+            color: #121212;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 999px;
+            transition: opacity 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            opacity: 0.88;
+        }
+
+        /* Tablet Responsive (2 Columns) */
+        @media (max-width: 920px) {
+            .card-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* Mobile Responsive (1 Column) */
+        @media (max-width: 600px) {
+            :root {
+                --pad-x: 16px;
+            }
+
+            .header-wrap {
+                top: 14px;
+            }
+
+            .header {
+                padding: 12px 18px;
+            }
+
+            .container {
+                padding: 96px var(--pad-x) 40px;
+            }
+
+            .block {
+                margin-bottom: 36px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .vcard {
+                min-height: auto;
+            }
+
+            .bottom-nav {
+                border-radius: 20px;
+                padding: 16px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 14px;
+            }
+
+            .bottom-links {
+                justify-content: center;
+                gap: 18px;
+            }
+
+            .bottom-actions {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Rounded Bar Header: Only favicon.ico & Spac2 API -->
+    <header class="header-wrap">
+        <a href="https://spac2.com" class="header" aria-label="Spac2 API Home">
+            <img src="https://spac2.com/favicon.ico" alt="Spac2 Logo" width="24" height="24">
+            <span>Spac2 API</span>
+        </a>
+    </header>
+
+    <main class="container">
+        <h1 class="sr-only">Spac2 API — Real-Time Web Search, Reader, and Indexing APIs</h1>
+
+        <div>
+            <!-- API Endpoints: Vertical Divided Cards -->
+            <section id="apis" class="block" aria-labelledby="heading-endpoints">
+                <h2 id="heading-endpoints" class="block-label">Endpoints</h2>
+                <div class="card-grid">
+                    <!-- Search API -->
+                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="vcard active">
+                        <div class="cell-head">
+                            <div class="cell-title-group">
+                                <span class="dot" aria-hidden="true"></span>
+                                <h3 class="cell-title">Search API</h3>
+                            </div>
+                            <span class="tag">Active</span>
+                        </div>
+                        <div class="cell-hero">
+                            <div class="hero-big">Web Search</div>
+                            <p class="hero-sub">Real-time, high-speed web search results for apps and agents.</p>
+                        </div>
+                        <div class="cell-split">
+                            <div class="cell-box">
+                                <span class="box-label">Method</span>
+                                <span class="box-val">GET / POST</span>
+                            </div>
+                            <div class="cell-box">
+                                <span class="box-label">Format</span>
+                                <span class="box-val">JSON</span>
+                            </div>
+                        </div>
+                        <div class="cell-row">
+                            <span>Path</span>
+                            <span>/search/search-api-guide</span>
+                        </div>
+                        <div class="cell-foot">
+                            <span>Documentation</span>
+                            <span aria-hidden="true">→</span>
+                        </div>
+                    </a>
+
+                    <!-- Reader API -->
+                    <article class="vcard disabled" aria-disabled="true">
+                        <div class="cell-head">
+                            <div class="cell-title-group">
+                                <span class="dot off" aria-hidden="true"></span>
+                                <h3 class="cell-title">Reader API</h3>
+                            </div>
+                            <span class="tag muted">Soon</span>
+                        </div>
+                        <div class="cell-hero">
+                            <div class="hero-big">Web Reader</div>
+                            <p class="hero-sub">Extract clean, structured Markdown and JSON from any URL.</p>
+                        </div>
+                        <div class="cell-split">
+                            <div class="cell-box">
+                                <span class="box-label">Method</span>
+                                <span class="box-val">GET</span>
+                            </div>
+                            <div class="cell-box">
+                                <span class="box-label">Format</span>
+                                <span class="box-val">MD / JSON</span>
+                            </div>
+                        </div>
+                        <div class="cell-row">
+                            <span>Path</span>
+                            <span>/reader</span>
+                        </div>
+                        <div class="cell-foot">
+                            <span>In Development</span>
+                            <span aria-hidden="true">—</span>
+                        </div>
+                    </article>
+
+                    <!-- Index API -->
+                    <article class="vcard disabled" aria-disabled="true">
+                        <div class="cell-head">
+                            <div class="cell-title-group">
+                                <span class="dot off" aria-hidden="true"></span>
+                                <h3 class="cell-title">Index API</h3>
+                            </div>
+                            <span class="tag muted">Soon</span>
+                        </div>
+                        <div class="cell-hero">
+                            <div class="hero-big">Realtime Index</div>
+                            <p class="hero-sub">Instant URL submission and automated web indexing pipeline.</p>
+                        </div>
+                        <div class="cell-split">
+                            <div class="cell-box">
+                                <span class="box-label">Method</span>
+                                <span class="box-val">POST</span>
+                            </div>
+                            <div class="cell-box">
+                                <span class="box-label">Format</span>
+                                <span class="box-val">JSON</span>
+                            </div>
+                        </div>
+                        <div class="cell-row">
+                            <span>Path</span>
+                            <span>/index</span>
+                        </div>
+                        <div class="cell-foot">
+                            <span>In Development</span>
+                            <span aria-hidden="true">—</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- API Packages: Vertical Divided Cards -->
+            <section id="plans" class="block" aria-labelledby="heading-packages">
+                <h2 id="heading-packages" class="block-label">Packages</h2>
+                <div class="card-grid">
+                    <!-- Free Plan -->
+                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="vcard">
+                        <div class="cell-head">
+                            <h3 class="cell-title">Free</h3>
+                            <span class="tag muted">Starter</span>
+                        </div>
+                        <div class="cell-hero">
+                            <div class="hero-big">$0</div>
+                            <p class="hero-sub">For testing, prototyping, and personal projects.</p>
+                        </div>
+                        <div class="cell-split">
+                            <div class="cell-box">
+                                <span class="box-label">Rate Limit</span>
+                                <span class="box-val">Standard</span>
+                            </div>
+                            <div class="cell-box">
+                                <span class="box-label">Latency</span>
+                                <span class="box-val">Normal</span>
+                            </div>
+                        </div>
+                        <div class="cell-row">
+                            <span>Endpoint</span>
+                            <span>Search API</span>
+                        </div>
+                        <div class="cell-row">
+                            <span>Support</span>
+                            <span>Community</span>
+                        </div>
+                        <div class="cell-foot">
+                            <span>Get Started</span>
+                            <span aria-hidden="true">→</span>
+                        </div>
+                    </a>
+
+                    <!-- Pro Plan -->
+                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="vcard active">
+                        <div class="cell-head">
+                            <h3 class="cell-title">Pro</h3>
+                            <span class="tag">Active</span>
+                        </div>
+                        <div class="cell-hero">
+                            <div class="hero-big">Pay-as-you-go</div>
+                            <p class="hero-sub">Built for production workloads requiring speed and scale.</p>
+                        </div>
+                        <div class="cell-split">
+                            <div class="cell-box">
+                                <span class="box-label">Rate Limit</span>
+                                <span class="box-val">High Speed</span>
+                            </div>
+                            <div class="cell-box">
+                                <span class="box-label">Latency</span>
+                                <span class="box-val">Low</span>
+                            </div>
+                        </div>
+                        <div class="cell-row">
+                            <span>Endpoint</span>
+                            <span>All Active APIs</span>
+                        </div>
+                        <div class="cell-row">
+                            <span>Support</span>
+                            <span>24/7 Priority</span>
+                        </div>
+                        <div class="cell-foot">
+                            <span>Start Building</span>
+                            <span aria-hidden="true">→</span>
+                        </div>
+                    </a>
+
+                    <!-- Custom Plan -->
+                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="vcard">
+                        <div class="cell-head">
+                            <h3 class="cell-title">Custom</h3>
+                            <span class="tag muted">SLA</span>
+                        </div>
+                        <div class="cell-hero">
+                            <div class="hero-big">Enterprise</div>
+                            <p class="hero-sub">Dedicated infrastructure with custom throughput limits.</p>
+                        </div>
+                        <div class="cell-split">
+                            <div class="cell-box">
+                                <span class="box-label">Rate Limit</span>
+                                <span class="box-val">Unlimited</span>
+                            </div>
+                            <div class="cell-box">
+                                <span class="box-label">Latency</span>
+                                <span class="box-val">Dedicated</span>
+                            </div>
+                        </div>
+                        <div class="cell-row">
+                            <span>Endpoint</span>
+                            <span>Custom + Private</span>
+                        </div>
+                        <div class="cell-row">
+                            <span>Support</span>
+                            <span>99.99% SLA</span>
+                        </div>
+                        <div class="cell-foot">
+                            <span>View Details</span>
+                            <span aria-hidden="true">→</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bottom Bar -->
+        <nav class="bottom-nav" aria-label="Footer Navigation">
+            <div class="bottom-links">
+                <a href="#apis">Endpoints</a>
+                <a href="#plans">Packages</a>
+                <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener">Search Docs</a>
+            </div>
+            <div class="bottom-actions">
+                <div class="status" role="status">
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>99.98% Online</span>
+                </div>
+                <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="btn">
+                    Read Docs
+                </a>
+            </div>
+        </nav>
+    </main>
+
+</body>
+</html>
