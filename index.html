@@ -222,82 +222,86 @@
             margin-bottom: 16px;
         }
 
-        /* 3-Column Vertical Square/Card Grid */
+        /* 3-Column Product Card Grid (Minimalist Store / Cart Style) */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
+            gap: 18px;
         }
 
-        .vcard {
+        .pcard {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 18px;
+            border-radius: 22px;
+            padding: 14px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 340px;
+            gap: 16px;
             min-width: 0;
             text-decoration: none;
             color: var(--text);
-            overflow: hidden;
-            transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+            transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
         }
 
-        a.vcard:hover {
-            border-color: var(--text);
-            background: var(--surface-hover);
-            transform: translateY(-2px);
+        a.pcard:hover {
+            border-color: rgba(255, 255, 255, 0.55);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
         }
 
-        .vcard.active {
-            border-color: rgba(255, 255, 255, 0.5);
+        .pcard.active {
+            border-color: rgba(255, 255, 255, 0.38);
         }
 
-        .vcard.disabled {
-            opacity: 0.48;
-            border-style: dashed;
+        .pcard.disabled {
+            opacity: 0.5;
         }
 
-        /* Divided Cells Inside Each Card */
-        .cell-head {
-            padding: 16px 20px;
-            border-bottom: 1px solid var(--border);
+        /* Top Product Visual Box */
+        .pcard-visual {
+            position: relative;
+            height: 148px;
+            background: var(--bg);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 10px;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .cell-title-group {
+        .pcard-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
             display: flex;
             align-items: center;
-            gap: 9px;
-            min-width: 0;
+            justify-content: center;
+            color: var(--text);
+            transition: transform 0.22s ease, border-color 0.22s ease;
         }
 
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--text);
-            flex-shrink: 0;
+        a.pcard:hover .pcard-icon {
+            transform: scale(1.06);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
-        .dot.off {
-            background: var(--muted);
+        .pcard-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        .cell-title {
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .tag {
+        .pcard-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
             padding: 4px 10px;
             border-radius: 999px;
             background: var(--text);
@@ -306,110 +310,108 @@
             font-weight: 600;
             font-size: 10px;
             text-transform: uppercase;
-            flex-shrink: 0;
+            letter-spacing: 0.03em;
         }
 
-        .tag.muted {
+        .pcard-badge.muted {
+            background: var(--surface);
+            color: var(--muted);
+            border: 1px solid var(--border);
+        }
+
+        .pcard-code {
+            position: absolute;
+            bottom: 10px;
+            left: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        /* Product Info Row */
+        .pcard-body {
+            padding: 0 4px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .pcard-title {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .pcard-sub {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .pcard-price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        /* Bottom Cart / Action Button */
+        .pcard-btn {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            background: var(--text);
+            color: #121212;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: opacity 0.2s ease;
+        }
+
+        a.pcard:hover .pcard-btn {
+            opacity: 0.9;
+        }
+
+        .pcard-btn.outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        a.pcard:hover .pcard-btn.outline {
+            background: var(--text);
+            color: #121212;
+            border-color: var(--text);
+        }
+
+        .pcard-btn.disabled {
             background: transparent;
             color: var(--muted);
             border: 1px solid var(--border);
         }
 
-        /* Main Hero Cell */
-        .cell-hero {
-            padding: 24px 20px;
-            border-bottom: 1px solid var(--border);
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 8px;
+        .pcard-btn svg {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        .hero-big {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-        }
-
-        .hero-sub {
-            font-size: 13px;
-            color: var(--muted);
-            line-height: 1.5;
-        }
-
-        /* 2-Column Split Spec Cells */
-        .cell-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .cell-box {
-            padding: 13px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            min-width: 0;
-        }
-
-        .cell-box:first-child {
-            border-right: 1px solid var(--border);
-        }
-
-        .box-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10px;
-            text-transform: uppercase;
-            color: var(--muted);
-            letter-spacing: 0.05em;
-        }
-
-        .box-val {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Single Row Divided Cells */
-        .cell-row {
-            padding: 12px 20px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-        }
-
-        .cell-row span:first-child {
-            color: var(--muted);
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text);
             flex-shrink: 0;
-        }
-
-        .cell-row span:last-child {
-            color: var(--text);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Bottom Action Cell */
-        .cell-foot {
-            padding: 14px 20px;
-            background: rgba(255, 255, 255, 0.02);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            font-weight: 500;
         }
 
         /* Bottom Navigation Bar */
@@ -513,10 +515,6 @@
                 gap: 14px;
             }
 
-            .vcard {
-                min-height: auto;
-            }
-
             .bottom-nav {
                 border-radius: 20px;
                 padding: 16px;
@@ -551,214 +549,177 @@
         <h1 class="sr-only">Spac2 API — Real-Time Web Search, Reader, and Indexing APIs</h1>
 
         <div>
-            <!-- API Endpoints: Vertical Divided Cards -->
+            <!-- API Endpoints: Minimalist Product / Store Cards -->
             <section id="apis" class="block" aria-labelledby="heading-endpoints">
                 <h2 id="heading-endpoints" class="block-label">Endpoints</h2>
                 <div class="card-grid">
                     <!-- Search API -->
-                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="vcard active">
-                        <div class="cell-head">
-                            <div class="cell-title-group">
-                                <span class="dot" aria-hidden="true"></span>
-                                <h3 class="cell-title">Search API</h3>
+                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="pcard active">
+                        <div class="pcard-visual">
+                            <span class="pcard-badge">Active</span>
+                            <div class="pcard-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="7"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
                             </div>
-                            <span class="tag">Active</span>
+                            <span class="pcard-code">GET / POST</span>
                         </div>
-                        <div class="cell-hero">
-                            <div class="hero-big">Web Search</div>
-                            <p class="hero-sub">Real-time, high-speed web search results for apps and agents.</p>
-                        </div>
-                        <div class="cell-split">
-                            <div class="cell-box">
-                                <span class="box-label">Method</span>
-                                <span class="box-val">GET / POST</span>
+                        <div class="pcard-body">
+                            <div>
+                                <h3 class="pcard-title">Search API</h3>
+                                <div class="pcard-sub">Web Search</div>
                             </div>
-                            <div class="cell-box">
-                                <span class="box-label">Format</span>
-                                <span class="box-val">JSON</span>
-                            </div>
+                            <div class="pcard-price">JSON</div>
                         </div>
-                        <div class="cell-row">
-                            <span>Path</span>
-                            <span>/search/search-api-guide</span>
-                        </div>
-                        <div class="cell-foot">
-                            <span>Documentation</span>
-                            <span aria-hidden="true">→</span>
+                        <div class="pcard-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <span>Get API</span>
                         </div>
                     </a>
 
                     <!-- Reader API -->
-                    <article class="vcard disabled" aria-disabled="true">
-                        <div class="cell-head">
-                            <div class="cell-title-group">
-                                <span class="dot off" aria-hidden="true"></span>
-                                <h3 class="cell-title">Reader API</h3>
+                    <article class="pcard disabled" aria-disabled="true">
+                        <div class="pcard-visual">
+                            <span class="pcard-badge muted">Soon</span>
+                            <div class="pcard-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                </svg>
                             </div>
-                            <span class="tag muted">Soon</span>
+                            <span class="pcard-code">GET</span>
                         </div>
-                        <div class="cell-hero">
-                            <div class="hero-big">Web Reader</div>
-                            <p class="hero-sub">Extract clean, structured Markdown and JSON from any URL.</p>
-                        </div>
-                        <div class="cell-split">
-                            <div class="cell-box">
-                                <span class="box-label">Method</span>
-                                <span class="box-val">GET</span>
+                        <div class="pcard-body">
+                            <div>
+                                <h3 class="pcard-title">Reader API</h3>
+                                <div class="pcard-sub">URL to Markdown</div>
                             </div>
-                            <div class="cell-box">
-                                <span class="box-label">Format</span>
-                                <span class="box-val">MD / JSON</span>
-                            </div>
+                            <div class="pcard-price">MD</div>
                         </div>
-                        <div class="cell-row">
-                            <span>Path</span>
-                            <span>/reader</span>
-                        </div>
-                        <div class="cell-foot">
-                            <span>In Development</span>
-                            <span aria-hidden="true">—</span>
+                        <div class="pcard-btn disabled">
+                            <span>Coming Soon</span>
                         </div>
                     </article>
 
                     <!-- Index API -->
-                    <article class="vcard disabled" aria-disabled="true">
-                        <div class="cell-head">
-                            <div class="cell-title-group">
-                                <span class="dot off" aria-hidden="true"></span>
-                                <h3 class="cell-title">Index API</h3>
+                    <article class="pcard disabled" aria-disabled="true">
+                        <div class="pcard-visual">
+                            <span class="pcard-badge muted">Soon</span>
+                            <div class="pcard-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
                             </div>
-                            <span class="tag muted">Soon</span>
+                            <span class="pcard-code">POST</span>
                         </div>
-                        <div class="cell-hero">
-                            <div class="hero-big">Realtime Index</div>
-                            <p class="hero-sub">Instant URL submission and automated web indexing pipeline.</p>
-                        </div>
-                        <div class="cell-split">
-                            <div class="cell-box">
-                                <span class="box-label">Method</span>
-                                <span class="box-val">POST</span>
+                        <div class="pcard-body">
+                            <div>
+                                <h3 class="pcard-title">Index API</h3>
+                                <div class="pcard-sub">Realtime Index</div>
                             </div>
-                            <div class="cell-box">
-                                <span class="box-label">Format</span>
-                                <span class="box-val">JSON</span>
-                            </div>
+                            <div class="pcard-price">JSON</div>
                         </div>
-                        <div class="cell-row">
-                            <span>Path</span>
-                            <span>/index</span>
-                        </div>
-                        <div class="cell-foot">
-                            <span>In Development</span>
-                            <span aria-hidden="true">—</span>
+                        <div class="pcard-btn disabled">
+                            <span>Coming Soon</span>
                         </div>
                     </article>
                 </div>
             </section>
 
-            <!-- API Packages: Vertical Divided Cards -->
+            <!-- API Packages: Minimalist Product / Store Cards -->
             <section id="plans" class="block" aria-labelledby="heading-packages">
                 <h2 id="heading-packages" class="block-label">Packages</h2>
                 <div class="card-grid">
                     <!-- Free Plan -->
-                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="vcard">
-                        <div class="cell-head">
-                            <h3 class="cell-title">Free</h3>
-                            <span class="tag muted">Starter</span>
-                        </div>
-                        <div class="cell-hero">
-                            <div class="hero-big">$0</div>
-                            <p class="hero-sub">For testing, prototyping, and personal projects.</p>
-                        </div>
-                        <div class="cell-split">
-                            <div class="cell-box">
-                                <span class="box-label">Rate Limit</span>
-                                <span class="box-val">Standard</span>
+                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="pcard">
+                        <div class="pcard-visual">
+                            <span class="pcard-badge muted">Starter</span>
+                            <div class="pcard-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                </svg>
                             </div>
-                            <div class="cell-box">
-                                <span class="box-label">Latency</span>
-                                <span class="box-val">Normal</span>
+                            <span class="pcard-code">Standard</span>
+                        </div>
+                        <div class="pcard-body">
+                            <div>
+                                <h3 class="pcard-title">Free</h3>
+                                <div class="pcard-sub">Personal</div>
                             </div>
+                            <div class="pcard-price">$0</div>
                         </div>
-                        <div class="cell-row">
-                            <span>Endpoint</span>
-                            <span>Search API</span>
-                        </div>
-                        <div class="cell-row">
-                            <span>Support</span>
-                            <span>Community</span>
-                        </div>
-                        <div class="cell-foot">
-                            <span>Get Started</span>
-                            <span aria-hidden="true">→</span>
+                        <div class="pcard-btn outline">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <span>Select Plan</span>
                         </div>
                     </a>
 
                     <!-- Pro Plan -->
-                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="vcard active">
-                        <div class="cell-head">
-                            <h3 class="cell-title">Pro</h3>
-                            <span class="tag">Active</span>
-                        </div>
-                        <div class="cell-hero">
-                            <div class="hero-big">Pay-as-you-go</div>
-                            <p class="hero-sub">Built for production workloads requiring speed and scale.</p>
-                        </div>
-                        <div class="cell-split">
-                            <div class="cell-box">
-                                <span class="box-label">Rate Limit</span>
-                                <span class="box-val">High Speed</span>
+                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="pcard active">
+                        <div class="pcard-visual">
+                            <span class="pcard-badge">Popular</span>
+                            <div class="pcard-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
                             </div>
-                            <div class="cell-box">
-                                <span class="box-label">Latency</span>
-                                <span class="box-val">Low</span>
+                            <span class="pcard-code">High Speed</span>
+                        </div>
+                        <div class="pcard-body">
+                            <div>
+                                <h3 class="pcard-title">Pro</h3>
+                                <div class="pcard-sub">Production</div>
                             </div>
+                            <div class="pcard-price">Pay-as-you-go</div>
                         </div>
-                        <div class="cell-row">
-                            <span>Endpoint</span>
-                            <span>All Active APIs</span>
-                        </div>
-                        <div class="cell-row">
-                            <span>Support</span>
-                            <span>24/7 Priority</span>
-                        </div>
-                        <div class="cell-foot">
-                            <span>Start Building</span>
-                            <span aria-hidden="true">→</span>
+                        <div class="pcard-btn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <span>Select Plan</span>
                         </div>
                     </a>
 
                     <!-- Custom Plan -->
-                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="vcard">
-                        <div class="cell-head">
-                            <h3 class="cell-title">Custom</h3>
-                            <span class="tag muted">SLA</span>
-                        </div>
-                        <div class="cell-hero">
-                            <div class="hero-big">Enterprise</div>
-                            <p class="hero-sub">Dedicated infrastructure with custom throughput limits.</p>
-                        </div>
-                        <div class="cell-split">
-                            <div class="cell-box">
-                                <span class="box-label">Rate Limit</span>
-                                <span class="box-val">Unlimited</span>
+                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="pcard">
+                        <div class="pcard-visual">
+                            <span class="pcard-badge muted">SLA</span>
+                            <div class="pcard-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
                             </div>
-                            <div class="cell-box">
-                                <span class="box-label">Latency</span>
-                                <span class="box-val">Dedicated</span>
+                            <span class="pcard-code">Unlimited</span>
+                        </div>
+                        <div class="pcard-body">
+                            <div>
+                                <h3 class="pcard-title">Custom</h3>
+                                <div class="pcard-sub">Dedicated</div>
                             </div>
+                            <div class="pcard-price">Enterprise</div>
                         </div>
-                        <div class="cell-row">
-                            <span>Endpoint</span>
-                            <span>Custom + Private</span>
-                        </div>
-                        <div class="cell-row">
-                            <span>Support</span>
-                            <span>99.99% SLA</span>
-                        </div>
-                        <div class="cell-foot">
-                            <span>View Details</span>
-                            <span aria-hidden="true">→</span>
+                        <div class="pcard-btn outline">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <span>Select Plan</span>
                         </div>
                     </a>
                 </div>
