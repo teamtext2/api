@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!-- Primary SEO Meta Tags -->
     <title>Spac2 API</title>
-    <meta name="title" content="Spac2 API — Real-Time Web Search, Reader & Indexing APIs">
-    <meta name="description" content="Spac2 API provides high-speed, low-latency Web Search, Web Reader, and Realtime Indexing APIs returning clean JSON and Markdown for developers and AI agents.">
-    <meta name="keywords" content="Spac2 API, Search API, Web Search API, Web Reader API, Realtime Index API, JSON Search API, AI Search API, spac2">
+    <meta name="title" content="Spac2 API — Official API Platform for the Spac2 Ecosystem">
+    <meta name="description"
+        content="Spac2 API is the official developer platform providing API services for the Spac2 ecosystem.">
+    <meta name="keywords"
+        content="Spac2 API, Spac2, Spac2 Ecosystem, Spac2 Developer Platform, API Platform, api.spac2.com">
     <meta name="author" content="Spac2">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="theme-color" content="#1D1D1D">
@@ -22,89 +25,57 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://api.spac2.com/">
     <meta property="og:site_name" content="Spac2 API">
-    <meta property="og:title" content="Spac2 API — Real-Time Web Search, Reader & Indexing APIs">
-    <meta property="og:description" content="High-speed, low-latency Web Search, Web Reader, and Realtime Indexing APIs for modern applications and AI agents.">
+    <meta property="og:title" content="Spac2 API — Official API Platform for the Spac2 Ecosystem">
+    <meta property="og:description"
+        content="Spac2 API is the official developer platform providing API services for the Spac2 ecosystem.">
     <meta property="og:image" content="https://spac2.com/favicon.ico">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="https://api.spac2.com/">
-    <meta name="twitter:title" content="Spac2 API — Real-Time Web Search, Reader & Indexing APIs">
-    <meta name="twitter:description" content="High-speed, low-latency Web Search, Web Reader, and Realtime Indexing APIs for modern applications and AI agents.">
+    <meta name="twitter:title" content="Spac2 API — Official API Platform for the Spac2 Ecosystem">
+    <meta name="twitter:description"
+        content="Spac2 API is the official developer platform providing API services for the Spac2 ecosystem.">
     <meta name="twitter:image" content="https://spac2.com/favicon.ico">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebSite",
-                "@id": "https://api.spac2.com/#website",
-                "url": "https://api.spac2.com/",
-                "name": "Spac2 API",
-                "description": "High-speed, low-latency Web Search, Web Reader, and Realtime Indexing APIs.",
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "Spac2",
-                    "url": "https://spac2.com",
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": "https://spac2.com/favicon.ico"
-                    }
-                }
-            },
-            {
-                "@type": "WebAPI",
-                "@id": "https://api.spac2.com/#search-api",
-                "name": "Spac2 Search API",
-                "description": "Real-time, high-speed web search results in JSON format for applications and AI agents.",
-                "documentation": "https://spac2.com/search/search-api-guide",
-                "termsOfService": "https://spac2.com/search/search-api-guide",
-                "provider": {
-                    "@type": "Organization",
-                    "name": "Spac2",
-                    "url": "https://spac2.com"
-                },
-                "offers": [
-                    {
-                        "@type": "Offer",
-                        "name": "Free Starter Plan",
-                        "price": "0",
-                        "priceCurrency": "USD",
-                        "url": "https://spac2.com/search/search-api-guide"
-                    },
-                    {
-                        "@type": "Offer",
-                        "name": "Pro Pay-as-you-go Plan",
-                        "description": "High speed, low latency production API access",
-                        "url": "https://spac2.com/search/search-api-guide"
-                    },
-                    {
-                        "@type": "Offer",
-                        "name": "Custom Enterprise SLA Plan",
-                        "description": "Dedicated infrastructure with unlimited rate limits and 99.99% SLA",
-                        "url": "https://spac2.com/search/search-api-guide"
-                    }
-                ]
+        "@type": "WebSite",
+        "@id": "https://api.spac2.com/#website",
+        "url": "https://api.spac2.com/",
+        "name": "Spac2 API",
+        "description": "The official platform providing API services for the Spac2 ecosystem.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Spac2",
+            "url": "https://spac2.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://spac2.com/favicon.ico"
             }
-        ]
+        }
     }
     </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
             --bg: #1D1D1D;
             --surface: #242424;
-            --surface-hover: #2C2C2C;
+            --surface-elevated: #2A2A2A;
             --border: #333333;
+            --border-highlight: rgba(255, 255, 255, 0.28);
             --text: #FFFFFF;
+            --text-secondary: #B8B8B8;
             --muted: #888888;
             --max-w: 1040px;
             --pad-x: 24px;
@@ -132,20 +103,121 @@
             overflow-x: hidden;
         }
 
-        /* Screen-reader / SEO Accessible Heading */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
+        /* =========================================================
+           INTRO SPLASH OVERLAY ("Welcome to Spac2 API" + Running Line)
+           ========================================================= */
+        .intro-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.65s;
         }
 
-        /* Floating Rounded Header Bar — Logo & Title Only */
+        .intro-screen.is-hidden {
+            opacity: 0;
+            transform: translateY(-16px) scale(0.99);
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .intro-box {
+            width: 100%;
+            max-width: 560px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .intro-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-secondary);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(8px);
+            animation: fadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+        }
+
+        .intro-pill img {
+            width: 15px;
+            height: 15px;
+            border-radius: 4px;
+        }
+
+        .intro-title {
+            font-size: clamp(28px, 5vw, 46px);
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            line-height: 1.12;
+            background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 40%, #9E9E9E 50%, #FFFFFF 60%, #FFFFFF 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 2.2s linear infinite, fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+        }
+
+        /* Sleek Running Line Effect */
+        .intro-runner-wrap {
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+        }
+
+        .intro-runner-track {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .intro-runner-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 35%, #FFFFFF 100%);
+            box-shadow: 0 0 16px rgba(255, 255, 255, 0.9);
+            transform: translateX(-100%);
+            animation: runnerSweep 1.35s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+        }
+
+        .intro-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        /* =========================================================
+           FLOATING ROUNDED HEADER BAR
+           ========================================================= */
         .header-wrap {
             position: fixed;
             top: 20px;
@@ -167,9 +239,10 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 9999px;
-            padding: 14px 24px;
+            padding: 13px 22px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 12px;
             text-decoration: none;
             color: var(--text);
@@ -181,6 +254,12 @@
             border-color: rgba(255, 255, 255, 0.28);
         }
 
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
         .header img {
             width: 24px;
             height: 24px;
@@ -189,108 +268,284 @@
             flex-shrink: 0;
         }
 
-        .header span {
-            font-size: 16px;
+        .header-title {
+            font-size: 15px;
             font-weight: 600;
             letter-spacing: -0.02em;
         }
 
-        /* Standard Container */
+        .header-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(29, 29, 29, 0.6);
+        }
+
+        /* =========================================================
+           MAIN CONTAINER & PAGE REVEAL
+           ========================================================= */
         .container {
             width: 100%;
             max-width: var(--max-w);
             margin: 0 auto;
-            padding: 120px var(--pad-x) 64px;
+            padding: 112px var(--pad-x) 56px;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            gap: 44px;
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Section Block */
-        .block {
-            margin-bottom: 48px;
+        body.is-ready .container {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .block-label {
+        /* =========================================================
+           HERO BANNER WITH RUNNING STREAM LINE
+           ========================================================= */
+        .hero {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            padding: 36px 34px 32px;
+            overflow: hidden;
+        }
+
+        /* Continuous subtle running light line along top of hero */
+        .hero-beam {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        .hero-beam::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -40%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+            animation: continuousBeam 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        .hero-heading {
+            font-size: clamp(28px, 4.2vw, 44px);
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            line-height: 1.12;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #FFFFFF 0%, #D4D4D4 50%, #FFFFFF 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 5s linear infinite;
+        }
+
+        .hero-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 640px;
+        }
+
+        /* Animated Ticker / Running Stream Strip inside Hero */
+        .stream-line {
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .stream-tag {
+            flex-shrink: 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .marquee-viewport {
+            flex: 1;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+        }
+
+        .marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            width: max-content;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--muted);
+            animation: marqueeScroll 22s linear infinite;
+        }
+
+        .marquee-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .marquee-item strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* =========================================================
+           BENTO GRID: LARGE & SMALL CARDS FOR API SERVICES
+           ========================================================= */
+        .section-block {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .section-label {
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--muted);
-            margin-bottom: 16px;
         }
 
-        /* 3-Column Product Card Grid (Minimalist Store / Cart Style) */
-        .card-grid {
+        .section-count {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        /* Asymmetric Bento Grid (Large + Small Cards) */
+        .bento-services {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(12, minmax(0, 1fr));
             gap: 18px;
         }
 
-        .pcard {
+        .bento-card {
+            position: relative;
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 22px;
-            padding: 14px;
+            border-radius: 24px;
+            padding: 26px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            min-width: 0;
+            justify-content: space-between;
+            gap: 22px;
             text-decoration: none;
             color: var(--text);
-            transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+            overflow: hidden;
+            transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        a.pcard:hover {
+        a.bento-card:hover {
             border-color: rgba(255, 255, 255, 0.55);
             transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.38);
         }
 
-        .pcard.active {
-            border-color: rgba(255, 255, 255, 0.38);
+        /* Large Featured Card: Spans 7 of 12 columns on desktop */
+        .bento-card.card-large {
+            grid-column: span 7;
+            border-color: rgba(255, 255, 255, 0.34);
+            background: linear-gradient(160deg, #272727 0%, #212121 100%);
         }
 
-        .pcard.disabled {
-            opacity: 0.5;
+        /* Side Stack for Smaller Service Cards: Spans 5 of 12 columns */
+        .bento-side-stack {
+            grid-column: span 5;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
         }
 
-        /* Top Product Visual Box */
-        .pcard-visual {
-            position: relative;
-            height: 148px;
-            background: var(--bg);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 14px;
+        .bento-card.card-small {
+            flex: 1;
+            padding: 22px;
+            gap: 16px;
+        }
+
+        .bento-card.is-soon {
+            opacity: 0.68;
+        }
+
+        /* Card Top Header */
+        .card-top {
             display: flex;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            justify-content: space-between;
+            gap: 12px;
         }
 
-        .pcard-icon {
-            width: 48px;
-            height: 48px;
+        .card-icon {
+            width: 46px;
+            height: 46px;
             border-radius: 14px;
-            background: var(--surface);
+            background: var(--bg);
             border: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text);
-            transition: transform 0.22s ease, border-color 0.22s ease;
+            flex-shrink: 0;
         }
 
-        a.pcard:hover .pcard-icon {
-            transform: scale(1.06);
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .pcard-icon svg {
-            width: 22px;
-            height: 22px;
+        .card-icon svg {
+            width: 21px;
+            height: 21px;
             stroke: currentColor;
             stroke-width: 1.8;
             fill: none;
@@ -298,105 +553,133 @@
             stroke-linejoin: round;
         }
 
-        .pcard-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: var(--text);
-            color: #121212;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 600;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
+        .card-badges {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .pcard-badge.muted {
-            background: var(--surface);
+        .badge {
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            background: var(--text);
+            color: #121212;
+        }
+
+        .badge.outline {
+            background: var(--bg);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .badge.soon {
+            background: transparent;
             color: var(--muted);
             border: 1px solid var(--border);
         }
 
-        .pcard-code {
-            position: absolute;
-            bottom: 10px;
-            left: 12px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            color: var(--muted);
+        /* Card Content */
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 8px;
         }
 
-        /* Product Info Row */
-        .pcard-body {
-            padding: 0 4px;
+        .card-small .card-title {
+            font-size: 19px;
+            margin-bottom: 6px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            line-height: 1.58;
+            color: var(--text-secondary);
+        }
+
+        .card-small .card-desc {
+            font-size: 13px;
+        }
+
+        /* Terminal / Endpoint Preview inside Large Card */
+        .endpoint-box {
+            background: var(--bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 14px 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .endpoint-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .method-pill {
+            color: #121212;
+            background: var(--text);
+            padding: 2px 7px;
+            border-radius: 5px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .endpoint-url {
+            color: var(--text-secondary);
+            word-break: break-all;
+        }
+
+        .endpoint-format {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        /* Card Action Footer */
+        .card-footer {
+            display: flex;
+            align-items: center;
             justify-content: space-between;
             gap: 12px;
+            padding-top: 4px;
         }
 
-        .pcard-title {
-            font-size: 18px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        .pcard-sub {
+        .card-meta-code {
+            font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
             color: var(--muted);
-            margin-top: 4px;
         }
 
-        .pcard-price {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text);
-            white-space: nowrap;
-        }
-
-        /* Bottom Cart / Action Button */
-        .pcard-btn {
-            width: 100%;
-            padding: 12px 16px;
+        .card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
             border-radius: 12px;
             background: var(--text);
             color: #121212;
             font-size: 13px;
             font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
             transition: opacity 0.2s ease;
         }
 
-        a.pcard:hover .pcard-btn {
+        a.bento-card:hover .card-cta {
             opacity: 0.9;
         }
 
-        .pcard-btn.outline {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        a.pcard:hover .pcard-btn.outline {
-            background: var(--text);
-            color: #121212;
-            border-color: var(--text);
-        }
-
-        .pcard-btn.disabled {
-            background: transparent;
-            color: var(--muted);
-            border: 1px solid var(--border);
-        }
-
-        .pcard-btn svg {
+        .card-cta svg {
             width: 15px;
             height: 15px;
             stroke: currentColor;
@@ -406,89 +689,168 @@
             stroke-linejoin: round;
         }
 
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--text);
-            flex-shrink: 0;
+        /* =========================================================
+           PACKAGES / PLANS ROW (3 COMPACT CARDS)
+           ========================================================= */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
         }
 
-        /* Bottom Navigation Bar */
-        .bottom-nav {
-            margin-top: 8px;
+        .plan-card {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 9999px;
-            padding: 8px 10px 8px 22px;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 18px;
+            text-decoration: none;
+            color: var(--text);
+            transition: border-color 0.22s ease, transform 0.22s ease;
+        }
+
+        .plan-card:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .plan-card.featured {
+            border-color: rgba(255, 255, 255, 0.34);
+        }
+
+        .plan-top {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        .bottom-links {
+        .plan-name {
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .plan-sub {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 3px;
+        }
+
+        .plan-bottom {
             display: flex;
             align-items: center;
-            gap: 22px;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .bottom-links a {
-            color: var(--muted);
-            text-decoration: none;
+        .plan-price {
+            font-family: 'JetBrains Mono', monospace;
             font-size: 13px;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .bottom-links a:hover {
+            font-weight: 600;
             color: var(--text);
         }
 
-        .bottom-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .status {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
+        .plan-arrow {
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
-            color: var(--muted);
-            padding: 7px 14px;
-            border-radius: 999px;
-            border: 1px solid var(--border);
+            color: var(--text-secondary);
         }
 
-        .btn {
-            background: var(--text);
-            color: #121212;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 8px 18px;
-            border-radius: 999px;
-            transition: opacity 0.2s ease;
-            white-space: nowrap;
+        /* =========================================================
+           KEYFRAME ANIMATIONS
+           ========================================================= */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .btn:hover {
-            opacity: 0.88;
+        @keyframes runnerSweep {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
         }
 
-        /* Tablet Responsive (2 Columns) */
-        @media (max-width: 920px) {
-            .card-grid {
+        @keyframes textShine {
+            0% {
+                background-position: 200% center;
+            }
+
+            100% {
+                background-position: 0% center;
+            }
+        }
+
+        @keyframes continuousBeam {
+            0% {
+                left: -45%;
+            }
+
+            100% {
+                left: 105%;
+            }
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.45;
+                transform: scale(0.88);
+            }
+        }
+
+        /* =========================================================
+           RESPONSIVE BREAKPOINTS
+           ========================================================= */
+        @media (max-width: 900px) {
+
+            .bento-card.card-large,
+            .bento-side-stack {
+                grid-column: span 12;
+            }
+
+            .bento-side-stack {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .plans-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
-        /* Mobile Responsive (1 Column) */
         @media (max-width: 600px) {
             :root {
                 --pad-x: 16px;
@@ -499,94 +861,189 @@
             }
 
             .header {
-                padding: 12px 18px;
+                padding: 11px 16px;
             }
 
             .container {
-                padding: 96px var(--pad-x) 40px;
+                padding: 94px var(--pad-x) 36px;
+                gap: 32px;
             }
 
-            .block {
-                margin-bottom: 36px;
+            .hero {
+                padding: 24px 20px 22px;
+                border-radius: 22px;
             }
 
-            .card-grid {
+            .bento-side-stack,
+            .plans-grid {
                 grid-template-columns: 1fr;
-                gap: 14px;
             }
 
-            .bottom-nav {
+            .bento-card {
+                padding: 20px;
                 border-radius: 20px;
-                padding: 16px;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 14px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .intro-screen {
+                display: none;
             }
 
-            .bottom-links {
-                justify-content: center;
-                gap: 18px;
+            .container {
+                opacity: 1;
+                transform: none;
             }
 
-            .bottom-actions {
-                justify-content: space-between;
-                width: 100%;
+            .marquee-track,
+            .hero-beam::after,
+            .hero-heading {
+                animation: none;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Rounded Bar Header: Only favicon.ico & Spac2 API -->
+    <!-- Entrance Welcome Screen with Running Line Effect -->
+    <div id="intro" class="intro-screen" aria-hidden="true">
+        <div class="intro-box">
+            <div class="intro-pill">
+                <img src="https://spac2.com/favicon.ico" alt="" width="15" height="15">
+                <span>api.spac2.com</span>
+            </div>
+            <div class="intro-title">Welcome to Spac2 API</div>
+            <div class="intro-runner-wrap">
+                <div class="intro-runner-track">
+                    <div class="intro-runner-bar"></div>
+                </div>
+                <div class="intro-meta">
+                    <span id="intro-status">LOADING ENDPOINTS...</span>
+                    <span id="intro-percent">100%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Rounded Header Bar -->
     <header class="header-wrap">
         <a href="https://spac2.com" class="header" aria-label="Spac2 API Home">
-            <img src="https://spac2.com/favicon.ico" alt="Spac2 Logo" width="24" height="24">
-            <span>Spac2 API</span>
+            <div class="header-brand">
+                <img src="https://spac2.com/favicon.ico" alt="Spac2 Logo" width="24" height="24">
+                <span class="header-title">Spac2 API</span>
+            </div>
+            <span class="header-tag">v1.0</span>
         </a>
     </header>
 
     <main class="container">
-        <h1 class="sr-only">Spac2 API — Real-Time Web Search, Reader, and Indexing APIs</h1>
+        <!-- Hero Welcome & Running Stream Line -->
+        <section class="hero" aria-labelledby="welcome-heading">
+            <div class="hero-beam" aria-hidden="true"></div>
+            <div class="hero-eyebrow">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span>Spac2 Developer Platform</span>
+            </div>
+            <h1 id="welcome-heading" class="hero-heading">Welcome to Spac2 API</h1>
+            <p class="hero-desc">
+                The official platform providing API services for the Spac2 ecosystem.
+            </p>
 
-        <div>
-            <!-- API Endpoints: Minimalist Product / Store Cards -->
-            <section id="apis" class="block" aria-labelledby="heading-endpoints">
-                <h2 id="heading-endpoints" class="block-label">Endpoints</h2>
-                <div class="card-grid">
-                    <!-- Search API -->
-                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="pcard active">
-                        <div class="pcard-visual">
-                            <span class="pcard-badge">Active</span>
-                            <div class="pcard-icon" aria-hidden="true">
+            <!-- Running Stream Ticker Line -->
+            <div class="stream-line" aria-label="API Services Overview">
+                <span class="stream-tag">LIVE STREAM</span>
+                <div class="marquee-viewport">
+                    <div class="marquee-track">
+                        <span class="marquee-item"><strong>Search API</strong> · Active · GET / POST · Clean JSON</span>
+                        <span class="marquee-item">•</span>
+                        <span class="marquee-item"><strong>Reader API</strong> · Coming Soon · GET · URL to
+                            Markdown</span>
+                        <span class="marquee-item">•</span>
+                        <span class="marquee-item"><strong>Index API</strong> · Coming Soon · POST · Realtime
+                            Index</span>
+                        <span class="marquee-item">•</span>
+                        <span class="marquee-item"><strong>99.98% Uptime</strong> · Low-Latency Edge Network</span>
+                        <span class="marquee-item">•</span>
+                        <!-- Duplicate for seamless loop -->
+                        <span class="marquee-item" aria-hidden="true"><strong>Search API</strong> · Active · GET / POST
+                            · Clean JSON</span>
+                        <span class="marquee-item" aria-hidden="true">•</span>
+                        <span class="marquee-item" aria-hidden="true"><strong>Reader API</strong> · Coming Soon · GET ·
+                            URL to Markdown</span>
+                        <span class="marquee-item" aria-hidden="true">•</span>
+                        <span class="marquee-item" aria-hidden="true"><strong>Index API</strong> · Coming Soon · POST ·
+                            Realtime Index</span>
+                        <span class="marquee-item" aria-hidden="true">•</span>
+                        <span class="marquee-item" aria-hidden="true"><strong>99.98% Uptime</strong> · Low-Latency Edge
+                            Network</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Services Bento Grid (Large & Small Cards) -->
+        <section id="apis" class="section-block" aria-labelledby="heading-services">
+            <div class="section-head">
+                <h2 id="heading-services" class="section-label">API Services</h2>
+                <span class="section-count">1 Active · 2 Upcoming</span>
+            </div>
+
+            <div class="bento-services">
+                <!-- LARGE CARD: Search API (Currently Active Service) -->
+                <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener"
+                    class="bento-card card-large">
+                    <div>
+                        <div class="card-top">
+                            <div class="card-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24">
                                     <circle cx="11" cy="11" r="7"></circle>
                                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                 </svg>
                             </div>
-                            <span class="pcard-code">GET / POST</span>
-                        </div>
-                        <div class="pcard-body">
-                            <div>
-                                <h3 class="pcard-title">Search API</h3>
-                                <div class="pcard-sub">Web Search</div>
+                            <div class="card-badges">
+                                <span class="badge outline">JSON</span>
+                                <span class="badge">Active</span>
                             </div>
-                            <div class="pcard-price">JSON</div>
                         </div>
-                        <div class="pcard-btn">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                                <line x1="3" y1="6" x2="21" y2="6"></line>
-                                <path d="M16 10a4 4 0 0 1-8 0"></path>
-                            </svg>
-                            <span>Get API</span>
-                        </div>
-                    </a>
 
-                    <!-- Reader API -->
-                    <article class="pcard disabled" aria-disabled="true">
-                        <div class="pcard-visual">
-                            <span class="pcard-badge muted">Soon</span>
-                            <div class="pcard-icon" aria-hidden="true">
+                        <div style="margin-top: 20px;">
+                            <h3 class="card-title">Search API</h3>
+                            <p class="card-desc">
+                                Real-time web search API delivering structured, high-speed JSON results built for modern
+                                web apps, RAG pipelines, and autonomous AI agents.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="endpoint-box" aria-label="Search API Endpoint Preview">
+                        <div class="endpoint-row">
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <span class="method-pill">GET / POST</span>
+                                <span class="endpoint-url">spac2.com/search/search-api-guide</span>
+                            </div>
+                            <span class="endpoint-format">application/json</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="card-meta-code">Web Search · Real-Time</span>
+                        <span class="card-cta">
+                            <span>Get Search API</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- SMALL CARDS STACK: Upcoming Services -->
+                <div class="bento-side-stack">
+                    <!-- SMALL CARD 1: Reader API -->
+                    <article class="bento-card card-small is-soon" aria-disabled="true">
+                        <div class="card-top">
+                            <div class="card-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14 2 14 8 20 8"></polyline>
@@ -594,156 +1051,137 @@
                                     <line x1="16" y1="17" x2="8" y2="17"></line>
                                 </svg>
                             </div>
-                            <span class="pcard-code">GET</span>
-                        </div>
-                        <div class="pcard-body">
-                            <div>
-                                <h3 class="pcard-title">Reader API</h3>
-                                <div class="pcard-sub">URL to Markdown</div>
+                            <div class="card-badges">
+                                <span class="badge outline">MD</span>
+                                <span class="badge soon">Coming Soon</span>
                             </div>
-                            <div class="pcard-price">MD</div>
                         </div>
-                        <div class="pcard-btn disabled">
-                            <span>Coming Soon</span>
+                        <div>
+                            <h3 class="card-title">Reader API</h3>
+                            <p class="card-desc">Extract and convert any URL into clean, LLM-ready Markdown with a
+                                single GET request.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-meta-code">GET · URL to Markdown</span>
                         </div>
                     </article>
 
-                    <!-- Index API -->
-                    <article class="pcard disabled" aria-disabled="true">
-                        <div class="pcard-visual">
-                            <span class="pcard-badge muted">Soon</span>
-                            <div class="pcard-icon" aria-hidden="true">
+                    <!-- SMALL CARD 2: Index API -->
+                    <article class="bento-card card-small is-soon" aria-disabled="true">
+                        <div class="card-top">
+                            <div class="card-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24">
                                     <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                                     <polyline points="2 17 12 22 22 17"></polyline>
                                     <polyline points="2 12 12 17 22 12"></polyline>
                                 </svg>
                             </div>
-                            <span class="pcard-code">POST</span>
-                        </div>
-                        <div class="pcard-body">
-                            <div>
-                                <h3 class="pcard-title">Index API</h3>
-                                <div class="pcard-sub">Realtime Index</div>
+                            <div class="card-badges">
+                                <span class="badge outline">JSON</span>
+                                <span class="badge soon">Coming Soon</span>
                             </div>
-                            <div class="pcard-price">JSON</div>
                         </div>
-                        <div class="pcard-btn disabled">
-                            <span>Coming Soon</span>
+                        <div>
+                            <h3 class="card-title">Index API</h3>
+                            <p class="card-desc">Submit URLs and structured content for instant real-time indexing via
+                                POST requests.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-meta-code">POST · Realtime Index</span>
                         </div>
                     </article>
                 </div>
-            </section>
-
-            <!-- API Packages: Minimalist Product / Store Cards -->
-            <section id="plans" class="block" aria-labelledby="heading-packages">
-                <h2 id="heading-packages" class="block-label">Packages</h2>
-                <div class="card-grid">
-                    <!-- Free Plan -->
-                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="pcard">
-                        <div class="pcard-visual">
-                            <span class="pcard-badge muted">Starter</span>
-                            <div class="pcard-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                                </svg>
-                            </div>
-                            <span class="pcard-code">Standard</span>
-                        </div>
-                        <div class="pcard-body">
-                            <div>
-                                <h3 class="pcard-title">Free</h3>
-                                <div class="pcard-sub">Personal</div>
-                            </div>
-                            <div class="pcard-price">$0</div>
-                        </div>
-                        <div class="pcard-btn outline">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                                <line x1="3" y1="6" x2="21" y2="6"></line>
-                                <path d="M16 10a4 4 0 0 1-8 0"></path>
-                            </svg>
-                            <span>Select Plan</span>
-                        </div>
-                    </a>
-
-                    <!-- Pro Plan -->
-                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="pcard active">
-                        <div class="pcard-visual">
-                            <span class="pcard-badge">Popular</span>
-                            <div class="pcard-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                                </svg>
-                            </div>
-                            <span class="pcard-code">High Speed</span>
-                        </div>
-                        <div class="pcard-body">
-                            <div>
-                                <h3 class="pcard-title">Pro</h3>
-                                <div class="pcard-sub">Production</div>
-                            </div>
-                            <div class="pcard-price">Pay-as-you-go</div>
-                        </div>
-                        <div class="pcard-btn">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                                <line x1="3" y1="6" x2="21" y2="6"></line>
-                                <path d="M16 10a4 4 0 0 1-8 0"></path>
-                            </svg>
-                            <span>Select Plan</span>
-                        </div>
-                    </a>
-
-                    <!-- Custom Plan -->
-                    <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="pcard">
-                        <div class="pcard-visual">
-                            <span class="pcard-badge muted">SLA</span>
-                            <div class="pcard-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                </svg>
-                            </div>
-                            <span class="pcard-code">Unlimited</span>
-                        </div>
-                        <div class="pcard-body">
-                            <div>
-                                <h3 class="pcard-title">Custom</h3>
-                                <div class="pcard-sub">Dedicated</div>
-                            </div>
-                            <div class="pcard-price">Enterprise</div>
-                        </div>
-                        <div class="pcard-btn outline">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                                <line x1="3" y1="6" x2="21" y2="6"></line>
-                                <path d="M16 10a4 4 0 0 1-8 0"></path>
-                            </svg>
-                            <span>Select Plan</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
-        </div>
-
-        <!-- Bottom Bar -->
-        <nav class="bottom-nav" aria-label="Footer Navigation">
-            <div class="bottom-links">
-                <a href="#apis">Endpoints</a>
-                <a href="#plans">Packages</a>
-                <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener">Search Docs</a>
             </div>
-            <div class="bottom-actions">
-                <div class="status" role="status">
-                    <span class="dot" aria-hidden="true"></span>
-                    <span>99.98% Online</span>
-                </div>
-                <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="btn">
-                    Read Docs
+        </section>
+
+        <!-- Packages / Plans Section -->
+        <section id="plans" class="section-block" aria-labelledby="heading-packages">
+            <div class="section-head">
+                <h2 id="heading-packages" class="section-label">Packages</h2>
+                <span class="section-count">Search API Access</span>
+            </div>
+
+            <div class="plans-grid">
+                <!-- Free Plan -->
+                <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="plan-card">
+                    <div>
+                        <div class="plan-top">
+                            <h3 class="plan-name">Free</h3>
+                            <span class="badge outline">Starter</span>
+                        </div>
+                        <div class="plan-sub">Personal & Testing · Standard Speed</div>
+                    </div>
+                    <div class="plan-bottom">
+                        <span class="plan-price">$0</span>
+                        <span class="plan-arrow">Select Plan →</span>
+                    </div>
+                </a>
+
+                <!-- Pro Plan -->
+                <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener"
+                    class="plan-card featured">
+                    <div>
+                        <div class="plan-top">
+                            <h3 class="plan-name">Pro</h3>
+                            <span class="badge">Popular</span>
+                        </div>
+                        <div class="plan-sub">Production · High Speed & Low Latency</div>
+                    </div>
+                    <div class="plan-bottom">
+                        <span class="plan-price">Pay-as-you-go</span>
+                        <span class="plan-arrow">Select Plan →</span>
+                    </div>
+                </a>
+
+                <!-- Custom Plan -->
+                <a href="https://spac2.com/search/search-api-guide" target="_blank" rel="noopener" class="plan-card">
+                    <div>
+                        <div class="plan-top">
+                            <h3 class="plan-name">Custom</h3>
+                            <span class="badge outline">SLA</span>
+                        </div>
+                        <div class="plan-sub">Dedicated Infrastructure · Unlimited</div>
+                    </div>
+                    <div class="plan-bottom">
+                        <span class="plan-price">Enterprise</span>
+                        <span class="plan-arrow">Select Plan →</span>
+                    </div>
                 </a>
             </div>
-        </nav>
+        </section>
     </main>
 
+    <script>
+        (function () {
+            var intro = document.getElementById('intro');
+            var statusEl = document.getElementById('intro-status');
+
+            function revealPage() {
+                if (document.body.classList.contains('is-ready')) return;
+                document.body.classList.add('is-ready');
+                if (intro) {
+                    intro.classList.add('is-hidden');
+                }
+            }
+
+            if (statusEl) {
+                setTimeout(function () {
+                    statusEl.textContent = 'READY · WELCOME TO SPAC2 API';
+                }, 700);
+            }
+
+            // Smooth auto-reveal after running line finishes, or click/key anywhere to skip immediately
+            var timer = setTimeout(revealPage, 1450);
+            window.addEventListener('click', function () {
+                clearTimeout(timer);
+                revealPage();
+            }, { once: true });
+            window.addEventListener('keydown', function () {
+                clearTimeout(timer);
+                revealPage();
+            }, { once: true });
+        })();
+    </script>
 </body>
+
 </html>
